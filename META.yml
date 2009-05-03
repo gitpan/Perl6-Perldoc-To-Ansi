@@ -1,0 +1,23 @@
+---
+abstract: 'ANSI-colored text renderer for Perl6::Perldoc'
+author:
+  - 'Hinrik Örn Sigurðsson, L<hinrik.sig@gmail.com>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 0.86'
+license: artistic
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Perl6-Perldoc-To-Ansi
+no_index:
+  directory:
+    - inc
+requires:
+  Perl6::Perldoc: 0.0.5
+resources:
+  license: http://opensource.org/licenses/artistic-license.php
+version: 0.01
