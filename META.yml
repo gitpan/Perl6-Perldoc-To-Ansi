@@ -20,4 +20,4 @@ requires:
   Perl6::Perldoc: 0.0.5
 resources:
   license: http://opensource.org/licenses/artistic-license.php
-version: 0.04
+version: 0.05
