@@ -16,8 +16,52 @@ name: Perl6-Perldoc-To-Ansi
 no_index:
   directory:
     - inc
+    - t
+  package:
+    - Perl6::Perldoc::Ambient
+    - Perl6::Perldoc::Block
+    - Perl6::Perldoc::Config
+    - Perl6::Perldoc::Document
+    - Perl6::Perldoc::FormattingCode
+    - Perl6::Perldoc::ParserReturnVal
+    - Perl6::Perldoc::Root
+    - Perl6::Perldoc::Block::Semantic
+    - Perl6::Perldoc::Block::code
+    - Perl6::Perldoc::Block::comment
+    - Perl6::Perldoc::Block::head1
+    - Perl6::Perldoc::Block::head2
+    - Perl6::Perldoc::Block::head3
+    - Perl6::Perldoc::Block::head4
+    - Perl6::Perldoc::Block::input
+    - Perl6::Perldoc::Block::item
+    - Perl6::Perldoc::Block::list
+    - Perl6::Perldoc::Block::nested
+    - Perl6::Perldoc::Block::output
+    - Perl6::Perldoc::Block::para
+    - Perl6::Perldoc::Block::pod
+    - Perl6::Perldoc::Block::table
+    - Perl6::Perldoc::Block::tocitem
+    - Perl6::Perldoc::Block::toclist
+    - Perl6::Perldoc::FormattingCode::B
+    - Perl6::Perldoc::FormattingCode::C
+    - Perl6::Perldoc::FormattingCode::D
+    - Perl6::Perldoc::FormattingCode::E
+    - Perl6::Perldoc::FormattingCode::I
+    - Perl6::Perldoc::FormattingCode::K
+    - Perl6::Perldoc::FormattingCode::L
+    - Perl6::Perldoc::FormattingCode::M
+    - Perl6::Perldoc::FormattingCode::N
+    - Perl6::Perldoc::FormattingCode::Named
+    - Perl6::Perldoc::FormattingCode::P
+    - Perl6::Perldoc::FormattingCode::R
+    - Perl6::Perldoc::FormattingCode::S
+    - Perl6::Perldoc::FormattingCode::T
+    - Perl6::Perldoc::FormattingCode::U
+    - Perl6::Perldoc::FormattingCode::V
+    - Perl6::Perldoc::FormattingCode::X
+    - Perl6::Perldoc::FormattingCode::Z
 requires:
   Perl6::Perldoc: 0.0.5
 resources:
   license: http://opensource.org/licenses/artistic-license.php
-version: 0.05
+version: 0.06
