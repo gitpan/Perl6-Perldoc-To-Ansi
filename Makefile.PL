@@ -9,7 +9,7 @@ my @packages = qw<
     Perl6::Perldoc::Config
     Perl6::Perldoc::Document
     Perl6::Perldoc::FormattingCode
-    Perl6::Perldoc::ParserReturnVal
+    Perl6::Perldoc::Parser::ReturnVal
     Perl6::Perldoc::Root
 >;
 push @packages, map { "Perl6::Perldoc::Block::$_" } qw<
@@ -26,6 +26,7 @@ abstract_from ('lib/Perl6/Perldoc/To/Ansi.pm');
 version_from  ('lib/Perl6/Perldoc/To/Ansi.pm');
 license       ('artistic');
 requires      ('Perl6::Perldoc' => '0.0.5');
+test_requires ('Test::More'     => '0');
 tests_recursive();
 no_index      (package => $_) for @packages;
 WriteAll();

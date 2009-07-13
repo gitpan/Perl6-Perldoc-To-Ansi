@@ -4,6 +4,7 @@ author:
   - 'Hinrik Örn Sigurðsson, L<hinrik.sig@gmail.com>'
 build_requires:
   ExtUtils::MakeMaker: 6.42
+  Test::More: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
@@ -23,7 +24,7 @@ no_index:
     - Perl6::Perldoc::Config
     - Perl6::Perldoc::Document
     - Perl6::Perldoc::FormattingCode
-    - Perl6::Perldoc::ParserReturnVal
+    - Perl6::Perldoc::Parser::ReturnVal
     - Perl6::Perldoc::Root
     - Perl6::Perldoc::Block::Semantic
     - Perl6::Perldoc::Block::code
@@ -64,4 +65,4 @@ requires:
   Perl6::Perldoc: 0.0.5
 resources:
   license: http://opensource.org/licenses/artistic-license.php
-version: 0.06
+version: 0.07
