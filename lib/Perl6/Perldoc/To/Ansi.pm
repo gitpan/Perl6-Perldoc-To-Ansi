@@ -3,7 +3,7 @@ package Perl6::Perldoc::To::Ansi;
 use warnings;
 use strict;
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 # add fake opening/closing tags, to be processed later
 sub add_ansi {
@@ -220,7 +220,7 @@ sub to_ansi {
     if (defined $number) {
         $title = "$number. $title";
     }
-    return "\n\n" . Perl6::Perldoc::To::Ansi::add_ansi_only($title, '1') ."\n";
+    return "\n" . Perl6::Perldoc::To::Ansi::add_ansi_only($title, '1') ."\n";
 }
 
 # Standard =head2 block...
@@ -235,7 +235,7 @@ sub to_ansi {
     if (defined $number) {
         $title = "$number. $title";
     }
-    return "\n\n" . Perl6::Perldoc::To::Ansi::add_ansi_only($title, '1') ."\n";
+    return "\n" . Perl6::Perldoc::To::Ansi::add_ansi_only($title, '1') ."\n";
 }
 
 # Standard =head3 block...
@@ -250,7 +250,7 @@ sub to_ansi {
     if (defined $number) {
         $title = "$number. $title";
     }
-    return "\n\n" . Perl6::Perldoc::To::Ansi::add_ansi_only($title, '1') ."\n";
+    return "\n" . Perl6::Perldoc::To::Ansi::add_ansi_only($title, '1') ."\n";
 }
 
 # Standard =head4 block...
@@ -265,7 +265,7 @@ sub to_ansi {
     if (defined $number) {
         $title = "$number. $title";
     }
-    return "\n\n" . Perl6::Perldoc::To::Ansi::add_ansi_only($title, '1') ."\n";
+    return "\n" . Perl6::Perldoc::To::Ansi::add_ansi_only($title, '1') ."\n";
 }
 
 # Implicit list block...
@@ -564,6 +564,13 @@ sub to_ansi {
     if ($target =~ s{\A (?:defn) : }{}xms) {
         $add_color->();
         return defined $text ? qq{$text (see the definition of $target)}
+                             : $target
+    }
+
+    # Link to an email address
+    if ($target =~ s{\A (?:mailto) : }{}xms) {
+        $add_color->();
+        return defined $text ? qq{$text ($target)}
                              : $target
     }
 
