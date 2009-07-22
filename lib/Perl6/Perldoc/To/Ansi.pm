@@ -3,7 +3,7 @@ package Perl6::Perldoc::To::Ansi;
 use warnings;
 use strict;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 # add fake opening/closing tags, to be processed later
 sub add_ansi {
@@ -667,6 +667,10 @@ package Perl6::Perldoc::FormattingCode::V;
 
 # indeX formatter...
 package Perl6::Perldoc::FormattingCode::X;
+
+sub to_ansi {
+    return q{};
+}
 
 # Zero-width formatter...
 package Perl6::Perldoc::FormattingCode::Z;
