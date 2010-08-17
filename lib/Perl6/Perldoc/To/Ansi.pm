@@ -1,9 +1,13 @@
 package Perl6::Perldoc::To::Ansi;
+BEGIN {
+  $Perl6::Perldoc::To::Ansi::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::To::Ansi::VERSION = '0.11';
+}
 
-use warnings;
+use warnings FATAL => 'all';
 use strict;
-
-our $VERSION = '0.10';
 
 # add fake opening/closing tags, to be processed later
 sub add_ansi {
@@ -67,6 +71,12 @@ sub rewrite_ansi {
 }
 
 package Perl6::Perldoc::Parser::ReturnVal;
+BEGIN {
+  $Perl6::Perldoc::Parser::ReturnVal::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Parser::ReturnVal::VERSION = '0.11';
+}
 
 sub to_ansi {
     my ($self, $internal_state) = @_;
@@ -82,7 +92,13 @@ sub to_ansi {
     return Perl6::Perldoc::To::Ansi::rewrite_ansi($text_rep);
 }
 
-package Perl6::Perldoc::Root;  
+package Perl6::Perldoc::Root;
+BEGIN {
+  $Perl6::Perldoc::Root::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Root::VERSION = '0.11';
+}  
 
 my $INDENT = 4;
 
@@ -127,24 +143,54 @@ sub to_ansi {
 }
 
 # Representation of file itself...
-package Perl6::Perldoc::Document;  
+package Perl6::Perldoc::Document;
+BEGIN {
+  $Perl6::Perldoc::Document::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Document::VERSION = '0.11';
+}  
     use base 'Perl6::Perldoc::Root';
 
 # Ambient text around the Pod...
-package Perl6::Perldoc::Ambient;  
+package Perl6::Perldoc::Ambient;
+BEGIN {
+  $Perl6::Perldoc::Ambient::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Ambient::VERSION = '0.11';
+}  
 
 sub to_ansi {
     return q{};
 }
 
 # Pod blocks...
-package Perl6::Perldoc::Block;    
+package Perl6::Perldoc::Block;
+BEGIN {
+  $Perl6::Perldoc::Block::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::VERSION = '0.11';
+}    
 
 # Standard =pod block...
-package Perl6::Perldoc::Block::pod;    
+package Perl6::Perldoc::Block::pod;
+BEGIN {
+  $Perl6::Perldoc::Block::pod::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::pod::VERSION = '0.11';
+}    
 
 # Standard =para block (may be implicit)...
-package Perl6::Perldoc::Block::para;   
+package Perl6::Perldoc::Block::para;
+BEGIN {
+  $Perl6::Perldoc::Block::para::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::para::VERSION = '0.11';
+}   
 
 sub to_ansi {
     my $self = shift;
@@ -152,7 +198,13 @@ sub to_ansi {
 }
 
 # Standard =code block (may be implicit)...
-package Perl6::Perldoc::Block::code;   
+package Perl6::Perldoc::Block::code;
+BEGIN {
+  $Perl6::Perldoc::Block::code::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::code::VERSION = '0.11';
+}   
 
 sub ansi_min {
     my $min = shift;
@@ -173,7 +225,13 @@ sub to_ansi {
 
 
 # Standard =input block
-package Perl6::Perldoc::Block::input;   
+package Perl6::Perldoc::Block::input;
+BEGIN {
+  $Perl6::Perldoc::Block::input::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::input::VERSION = '0.11';
+}   
 
 sub to_ansi {
     my $self = shift;
@@ -184,7 +242,13 @@ sub to_ansi {
 
 
 # Standard =output block
-package Perl6::Perldoc::Block::output;   
+package Perl6::Perldoc::Block::output;
+BEGIN {
+  $Perl6::Perldoc::Block::output::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::output::VERSION = '0.11';
+}   
 
 sub to_ansi {
     my $self = shift;
@@ -194,14 +258,26 @@ sub to_ansi {
 }
 
 # Standard =config block...
-package Perl6::Perldoc::Config; 
+package Perl6::Perldoc::Config;
+BEGIN {
+  $Perl6::Perldoc::Config::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Config::VERSION = '0.11';
+} 
 
 sub to_ansi {
     return q{};
 }
 
 # Standard =table block...
-package Perl6::Perldoc::Block::table; 
+package Perl6::Perldoc::Block::table;
+BEGIN {
+  $Perl6::Perldoc::Block::table::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::table::VERSION = '0.11';
+} 
 
 sub to_ansi {
     my $self = shift;
@@ -211,7 +287,13 @@ sub to_ansi {
 
 
 # Standard =head1 block...
-package Perl6::Perldoc::Block::head1;  
+package Perl6::Perldoc::Block::head1;
+BEGIN {
+  $Perl6::Perldoc::Block::head1::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::head1::VERSION = '0.11';
+}  
 
 sub to_ansi {
     my $self = shift;
@@ -226,7 +308,13 @@ sub to_ansi {
 }
 
 # Standard =head2 block...
-package Perl6::Perldoc::Block::head2;  
+package Perl6::Perldoc::Block::head2;
+BEGIN {
+  $Perl6::Perldoc::Block::head2::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::head2::VERSION = '0.11';
+}  
 
 sub to_ansi {
     my $self = shift;
@@ -241,7 +329,13 @@ sub to_ansi {
 }
 
 # Standard =head3 block...
-package Perl6::Perldoc::Block::head3;  
+package Perl6::Perldoc::Block::head3;
+BEGIN {
+  $Perl6::Perldoc::Block::head3::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::head3::VERSION = '0.11';
+}  
 
 sub to_ansi {
     my $self = shift;
@@ -256,7 +350,13 @@ sub to_ansi {
 }
 
 # Standard =head4 block...
-package Perl6::Perldoc::Block::head4;  
+package Perl6::Perldoc::Block::head4;
+BEGIN {
+  $Perl6::Perldoc::Block::head4::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::head4::VERSION = '0.11';
+}  
 
 sub to_ansi {
     my $self = shift;
@@ -271,7 +371,13 @@ sub to_ansi {
 }
 
 # Implicit list block...
-package Perl6::Perldoc::Block::list;   
+package Perl6::Perldoc::Block::list;
+BEGIN {
+  $Perl6::Perldoc::Block::list::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::list::VERSION = '0.11';
+}   
     use base 'Perl6::Perldoc::Root';
 
 sub to_ansi {
@@ -281,7 +387,13 @@ sub to_ansi {
 
 
 # Standard =item block...
-package Perl6::Perldoc::Block::item;   
+package Perl6::Perldoc::Block::item;
+BEGIN {
+  $Perl6::Perldoc::Block::item::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::item::VERSION = '0.11';
+}   
 
 sub to_ansi {
     my $self = shift;
@@ -309,7 +421,13 @@ sub to_ansi {
 }
 
 # Implicit toclist block...
-package Perl6::Perldoc::Block::toclist;   
+package Perl6::Perldoc::Block::toclist;
+BEGIN {
+  $Perl6::Perldoc::Block::toclist::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::toclist::VERSION = '0.11';
+}   
     use base 'Perl6::Perldoc::Root';
 
 sub to_ansi {
@@ -323,7 +441,13 @@ sub to_ansi {
 
 
 # Standard =tocitem block...
-package Perl6::Perldoc::Block::tocitem;   
+package Perl6::Perldoc::Block::tocitem;
+BEGIN {
+  $Perl6::Perldoc::Block::tocitem::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::tocitem::VERSION = '0.11';
+}   
 
 sub to_ansi {
     my $self = shift;
@@ -358,7 +482,13 @@ for my $depth (1..100) {
 }
 
 # Standard =nested block...
-package Perl6::Perldoc::Block::nested;   
+package Perl6::Perldoc::Block::nested;
+BEGIN {
+  $Perl6::Perldoc::Block::nested::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::nested::VERSION = '0.11';
+}   
 
 sub to_ansi {
     my $self = shift;
@@ -366,7 +496,13 @@ sub to_ansi {
 }
 
 # Standard =comment block...
-package Perl6::Perldoc::Block::comment;   
+package Perl6::Perldoc::Block::comment;
+BEGIN {
+  $Perl6::Perldoc::Block::comment::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::comment::VERSION = '0.11';
+}   
 
 sub to_ansi {
     return q{};
@@ -374,6 +510,12 @@ sub to_ansi {
 
 # Standard SEMANTIC blocks...
 package Perl6::Perldoc::Block::Semantic;
+BEGIN {
+  $Perl6::Perldoc::Block::Semantic::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::Block::Semantic::VERSION = '0.11';
+}
 BEGIN {
     my @semantic_blocks = qw(
         NAME              NAMES
@@ -431,12 +573,30 @@ BEGIN {
 
 # Base class for formatting codes...
 
-package Perl6::Perldoc::FormattingCode; 
+package Perl6::Perldoc::FormattingCode;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::VERSION = '0.11';
+} 
 
-package Perl6::Perldoc::FormattingCode::Named; 
+package Perl6::Perldoc::FormattingCode::Named;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::Named::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::Named::VERSION = '0.11';
+} 
 
 # Basis formatter...
 package Perl6::Perldoc::FormattingCode::B;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::B::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::B::VERSION = '0.11';
+}
 
 sub to_ansi {
     my $self = shift;
@@ -445,6 +605,12 @@ sub to_ansi {
 
 # Code formatter...
 package Perl6::Perldoc::FormattingCode::C;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::C::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::C::VERSION = '0.11';
+}
 
 sub to_ansi {
     my $self = shift;
@@ -453,6 +619,12 @@ sub to_ansi {
 
 # Definition formatter...
 package Perl6::Perldoc::FormattingCode::D;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::D::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::D::VERSION = '0.11';
+}
 
 sub to_ansi {
     my $self = shift;
@@ -462,6 +634,12 @@ sub to_ansi {
 
 # Entity formatter...
 package Perl6::Perldoc::FormattingCode::E;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::E::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::E::VERSION = '0.11';
+}
 
 my %is_break_entity = (
     'LINE FEED (LF)'       => 1,     LF  => 1,
@@ -513,6 +691,12 @@ sub to_ansi {
 
 # Important formatter...
 package Perl6::Perldoc::FormattingCode::I;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::I::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::I::VERSION = '0.11';
+}
 
 sub to_ansi {
     my $self = shift;
@@ -521,6 +705,12 @@ sub to_ansi {
 
 # Keyboard input formatter...
 package Perl6::Perldoc::FormattingCode::K;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::K::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::K::VERSION = '0.11';
+}
 
 sub to_ansi {
     my $self = shift;
@@ -529,6 +719,12 @@ sub to_ansi {
 
 # Link formatter...
 package Perl6::Perldoc::FormattingCode::L;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::L::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::L::VERSION = '0.11';
+}
 
 my $PERLDOC_ORG = 'http://perldoc.perl.org/';
 my $SEARCH      = 'http://www.google.com/search?q=';
@@ -584,10 +780,22 @@ sub to_ansi {
 
 # Meta-formatter...
 package Perl6::Perldoc::FormattingCode::M;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::M::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::M::VERSION = '0.11';
+}
 
 
 # Note formatter...
 package Perl6::Perldoc::FormattingCode::N;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::N::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::N::VERSION = '0.11';
+}
 
 sub to_ansi {
     my $self = shift;
@@ -599,6 +807,12 @@ sub to_ansi {
 
 # Placement link formatter...
 package Perl6::Perldoc::FormattingCode::P;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::P::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::P::VERSION = '0.11';
+}
 
 sub to_ansi {
     my $self = shift;
@@ -631,6 +845,12 @@ sub to_ansi {
 
 # Replacable item formatter...
 package Perl6::Perldoc::FormattingCode::R;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::R::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::R::VERSION = '0.11';
+}
 
 sub to_ansi {
     my $self = shift;
@@ -639,6 +859,12 @@ sub to_ansi {
 
 # Space-preserving formatter...
 package Perl6::Perldoc::FormattingCode::S;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::S::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::S::VERSION = '0.11';
+}
 
 sub to_ansi {
     my $self = shift;
@@ -648,6 +874,12 @@ sub to_ansi {
 
 # Terminal output formatter...
 package Perl6::Perldoc::FormattingCode::T;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::T::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::T::VERSION = '0.11';
+}
 
 sub to_ansi {
     my $self = shift;
@@ -656,6 +888,12 @@ sub to_ansi {
 
 # Unusual formatter...
 package Perl6::Perldoc::FormattingCode::U;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::U::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::U::VERSION = '0.11';
+}
 
 sub to_ansi {
     my $self = shift;
@@ -664,9 +902,21 @@ sub to_ansi {
 
 # Verbatim formatter...
 package Perl6::Perldoc::FormattingCode::V;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::V::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::V::VERSION = '0.11';
+}
 
 # indeX formatter...
 package Perl6::Perldoc::FormattingCode::X;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::X::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::X::VERSION = '0.11';
+}
 
 sub to_ansi {
     return q{};
@@ -674,6 +924,12 @@ sub to_ansi {
 
 # Zero-width formatter...
 package Perl6::Perldoc::FormattingCode::Z;
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::Z::AUTHORITY = 'cpan:HINRIK';
+}
+BEGIN {
+  $Perl6::Perldoc::FormattingCode::Z::VERSION = '0.11';
+}
 
 sub to_ansi {
     return q{};
@@ -685,9 +941,8 @@ package Perl6::Perldoc::Block::table;
 
 
 1; # Magic true value required at end of module
-__END__
 
-=encoding UTF-8
+=encoding utf8
 
 =head1 NAME
 
